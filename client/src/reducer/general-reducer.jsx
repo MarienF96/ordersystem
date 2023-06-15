@@ -1,11 +1,13 @@
 const general_reducer = (state, action) => {
-	if (action.type === "MODAL_OPEN") {
+	if (action.type === "CHANGE_MODAL_VIEW") {
 		console.log("modal open");
 		return;
 	}
-	if (action.type === "MODAL_CLOSE") {
-		console.log("modal close");
-		return;
+	if (action.type === "ORDER_VIEW") {
+		return { ...state, order_view: false };
+	}
+	if (action.type === "SINGLE_ORDER_VIEW") {
+		return { ...state, order_view: true };
 	}
 	if (action.type === "ADD_TO_CART") {
 		console.log("added to cart");
